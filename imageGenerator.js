@@ -1,3 +1,6 @@
+//---ATTENTION---
+//artwork source is not available in the github code
+
 const fs = require('fs')
 const { createCanvas, loadImage } = require('canvas')
 
