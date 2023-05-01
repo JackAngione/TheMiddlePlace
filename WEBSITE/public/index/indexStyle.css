@@ -1,0 +1,100 @@
+@import url('http://fonts.cdnfonts.com/css/akira-expanded');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@font-face {
+  font-family: "Akira";
+  src:  url("fonts/Akira.otf") format("opentype"),
+  
+}
+html, body
+{
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
+body
+{
+ 
+	font-family: 'Akira Expanded', sans-serif;
+}
+
+
+.parent
+{
+  position: relative;
+  display: block;
+  
+  /*
+  border: 1px solid black;
+  */
+  
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 2rem;
+  text-align: center;
+  
+  top: 20px;
+  left: 4%;
+  
+}
+
+.child
+{
+  display: inline-block;
+  /*
+  border: 1px solid red;
+  */
+  vertical-align: middle;
+  
+}
+canvas 
+{
+  border: none;
+  
+  border:10px solid #000000;
+  
+  background: #ffffff;
+  width: 2500px;
+  min-width: 180px;
+  max-width: 36vw;
+}
+
+.btn
+{
+  display:block;
+  background-color: white;
+  position: relative;
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.4vw;
+  height: 5vw;
+  width: 10vw;
+
+  border: none;
+  border-radius: .8vw;
+}
+
+.btnBuy
+{
+  position: relative;
+  background-color: white;
+  font-family: 'Anton', sans-serif;
+  left: 10px;
+  height: 4vw;
+  width: 7vw;
+  font-size: 1.1vw;
+
+  border: none;
+  border-radius: .4vw;
+}
+.btn:hover
+{
+  background-color: #ffde00;
+  cursor: pointer;
+}
+.btnBuy:hover
+{
+  background-color: #ffde00;
+  cursor: pointer;
+}

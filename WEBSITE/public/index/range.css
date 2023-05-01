@@ -1,0 +1,51 @@
+.s1,.s2,.s3,.s4,.s5
+{    
+  position: relative;
+  display: block;
+  
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  width: 10vw;
+  height: .8vw;
+
+  border: none;
+  border-radius: .3vw;
+}
+.sliderTitle
+{
+  font-family: 'Anton', sans-serif;
+  position: relative;
+  top: 1.6vw;
+  font-size: 1.4vw;
+  color:rgb(0, 0, 0);
+}
+
+input[type="range"]
+{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: black;
+  border: none;
+  border-radius: .5vw;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  border: none;
+  border-radius: .3vw;
+  margin-top: 0px; /* Centers thumb on the track */
+  background-color: #5cd5eb;
+  height: .9vw;
+  width: 2vw;   
+    
+  }
+  input[type="range"]::-moz-range-thumb 
+  {
+    border: none;
+    border-radius: .2vw;
+    height: 100%;
+    width: 20%; 
+    background: #00e6ff;
+    cursor: pointer;
+  }

@@ -1,0 +1,6 @@
+Nodejs canvas: https://flaviocopes.com/canvas-node-generate-image/
+
+Everything nodeJS server: https://youtu.be/SccSCuHhOw0
+
+Parse text file (n-readLines): https://geshan.com.np/blog/2021/10/nodejs-read-file-line-by-line/
+get images to render in order: https://jsfiddle.net/elmouse19/1e82vovw/

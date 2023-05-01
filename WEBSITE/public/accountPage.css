@@ -1,0 +1,34 @@
+@import url('http://fonts.cdnfonts.com/css/akira-expanded');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+body
+{
+   vertical-align: middle;
+   text-align: center;
+   background-color: white;
+   color: black;
+   font-family: 'Akira Expanded', sans-serif;
+}
+.formDiv
+{
+   position: relative;
+   display: inline-flex;
+   font-family: 'Anton', sans-serif;
+   border: none;
+   border: 1px solid #00e6ff;
+   
+   width: 500px;
+   vertical-align: middle;
+   text-align: center;
+}
+.submitebtn
+{
+   font-family: 'Anton', sans-serif;
+   background-color: white;
+   border: none;
+   border-radius: 3px;
+}
+.submitebtn:hover
+{
+  background-color: #ffde00;
+  cursor: pointer;
+}

@@ -1,0 +1,14 @@
+body {
+	background: #000000;
+	font-family: 'Akira Expanded', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  }
+#myIframe
+{
+    position: fixed;
+    top: 140px;
+    min-width: 100%;
+    height: 90%;
+}
