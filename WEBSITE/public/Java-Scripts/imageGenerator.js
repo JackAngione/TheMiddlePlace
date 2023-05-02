@@ -39,39 +39,20 @@ let NFTID;
 //GENERATE IMAGE
 function generateImage(backgroundNum, headNum, earNum, hairNum, eyeNum, clothingNum)
 {
-  //CLEAR THE CANVAS AND SET WHITE BACKGROUND
+  //GENERATE RANDOM INT FOR EACH ATTRIBUTE TYPE
+  if(headNum == null)
+  {
+    backgroundNum = Math.floor(Math.random() * 5);
+    headNum = Math.floor(Math.random() * 2);
+    earNum = Math.floor(Math.random() * 3);
+    hairNum = Math.floor(Math.random() * 3);
+    eyeNum = Math.floor(Math.random() * 2);
+    clothingNum = Math.floor(Math.random() * 2);
+  }
+  //SETUP CLEAR CANVAS WITH BACKGROUD IMAGE
   removeImg();
   canvas.fillStyle = backgroundColors[backgroundNum];
   canvas.fillRect(0,0, document.getElementById("imageGen").width, document.getElementById("imageGen").height);
-  //
-  
-  //GENERATE RANDOM INT FOR EACH ATTRIBUTE TYPE
-  if(backgroundNum==null)
-  {
-    backgroundNum = Math.floor(Math.random() * 4);
-  }
-  if(headNum == null)
-  {
-    headNum = Math.floor(Math.random() * 2);
-  }
-  if(earNum == null)
-  {
-    earNum = Math.floor(Math.random() * 2);
-  }
-  if(hairNum == null)
-  {
-    hairNum = Math.floor(Math.random() * 2);
-  }
-  if(eyeNum == null)
-  {
-    eyeNum = Math.floor(Math.random() * 2);
-  }
-  if(clothingNum == null)
-  {
-    clothingNum = Math.floor(Math.random() * 2);
-  }
-  //console.log("setting initial skynum")
-
 
   //SET SLIDER VALUES TO THE RANDOM INT
   backgroundSlider.value = backgroundNum.toString()
@@ -80,7 +61,6 @@ function generateImage(backgroundNum, headNum, earNum, hairNum, eyeNum, clothing
   hairSlider.value = hairNum.toString()
   eyeSlider.value = eyeNum.toString()
   clothingSlider.value = clothingNum.toString()
-  //
   //LOAD IMAGES
   function loadImages(sources, callback) 
   {
@@ -101,23 +81,21 @@ function generateImage(backgroundNum, headNum, earNum, hairNum, eyeNum, clothing
           callback(images);
         }
       };
-
       images[src].src = sources[src];
     }
   }
-
   const sources =
       {
         //HEAD
-        image0: "/landscapeNFTGnerator/LANDSCAPETESTIMAGES/head/" + headNum + ".png",
+        image0: "/nftSourceImages/head/" + headNum + ".png",
         //EAR
-        image1: "/landscapeNFTGnerator/LANDSCAPETESTIMAGES/ear/" + earNum + ".png",
+        image1: "/nftSourceImages/ear/" + earNum + ".png",
         //HAIR
-        image2: "/landscapeNFTGnerator/LANDSCAPETESTIMAGES/hair/" + hairNum + ".png",
+        image2: "/nftSourceImages/hair/" + hairNum + ".png",
         //EYE
-        image3: "/landscapeNFTGnerator/LANDSCAPETESTIMAGES/eyes/" + eyeNum + ".png",
+        image3: "/nftSourceImages/eyes/" + eyeNum + ".png",
         //CLOTHING
-        image4: "/landscapeNFTGnerator/LANDSCAPETESTIMAGES/clothing/" + clothingNum + ".png"
+        image4: "/nftSourceImages/clothing/" + clothingNum + ".png"
       };
 
   //CALL IMAGE LOAD FUNCTION
@@ -137,10 +115,7 @@ function generateImage(backgroundNum, headNum, earNum, hairNum, eyeNum, clothing
     }
     canvas.drawImage(images.image4, 0, 0);
   });
-
-
   //GET NFT ID
-  //NFTID = "H" + hairSlider.value + "E" + eyeSlider.value + "E" + earSlider.value + "M" + mouthSlider.value + "C" + clothesSlider.value;
   NFTID = headSlider.value + "_" + earSlider.value + "_" + hairSlider.value + "_" + eyeSlider.value + "_" + clothingSlider.value;
   console.log(NFTID);
 }
@@ -156,15 +131,11 @@ function removeImg()
   hairSlider.value = "0"
   eyeSlider.value = "0"
   clothingSlider.value = "0"
-  //
 }
 
 function getNFTIDpost()
 {
-
-  //CUT OFF FIFTH VALUE SO THAT IT MATCHES TEST NFT IDs
-  //truncatedNFTID = NFTID.substring(0, 7)
-  payload = {"theid": NFTID}
+  let payload = {"theid": NFTID}
   fetch("/NFT_ID",
   { 
     method: "POST", 
@@ -174,12 +145,11 @@ function getNFTIDpost()
     .then(response  => response .text())
     .then(data => 
       {
-        if(data === "https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/undefined")
+        if(data === "https://rarible.com/token/0x72cc367ea820a456ab3c5fb17424b6837c8a514e:undefined")
         {
-          alert("Sorry, the NFTID and URL dont match up (இ﹏இ`｡)")
+          alert("Sorry, image combination doesn't have a matching NFT (இ﹏இ`｡)")
         }
-        else
-        {
+        else {
           window.open(data)
         }
       }
@@ -188,6 +158,5 @@ function getNFTIDpost()
     {
       console.error('Error:', error);
     })
-    
-  return truncatedNFTID
+  return NFTID
 }
