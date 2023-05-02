@@ -6,8 +6,8 @@
  
 HOW TO RUN WEBSITE:
 
-Install NodeJS
-Open terminal inside main folder
-type "node server.js"
-Open browser and got to localhost:3000
+Install NodeJS -> 
+Open terminalinside WEBSITE folder -> 
+type "node server.js" ->
+Open browser and got to localhost:3000 -> 
 done!
