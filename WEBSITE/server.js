@@ -24,5 +24,5 @@ app.post("/NFT_ID", (req, res) => {
   res.send(nftFunctions.getURL(req.body.theid, nftFunctions.parseIDs()))
 });
 
-app.listen(3000)
+app.listen(3021)
 console.log("server started")
