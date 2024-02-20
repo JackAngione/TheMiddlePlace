@@ -87,15 +87,15 @@ function generateImage(backgroundNum, headNum, earNum, hairNum, eyeNum, clothing
   const sources =
       {
         //HEAD
-        image0: "/nftSourceImages/head/" + headNum + ".png",
+        image0: "/nftSourceImages/head/" + headNum + ".webp",
         //EAR
-        image1: "/nftSourceImages/ear/" + earNum + ".png",
+        image1: "/nftSourceImages/ear/" + earNum + ".webp",
         //HAIR
-        image2: "/nftSourceImages/hair/" + hairNum + ".png",
+        image2: "/nftSourceImages/hair/" + hairNum + ".webp",
         //EYE
-        image3: "/nftSourceImages/eyes/" + eyeNum + ".png",
+        image3: "/nftSourceImages/eyes/" + eyeNum + ".webp",
         //CLOTHING
-        image4: "/nftSourceImages/clothing/" + clothingNum + ".png"
+        image4: "/nftSourceImages/clothing/" + clothingNum + ".webp"
       };
 
   //CALL IMAGE LOAD FUNCTION
